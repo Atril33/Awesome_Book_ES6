@@ -21,11 +21,11 @@ class BookCollection {
     this.myList = document.getElementById('list-holder');
   }
 
-  saveBooks() {
+  saveBooks = () => {
     localStorage.setItem(this.BOOKS_KEY, JSON.stringify(this.books));
   }
 
-  addBook() {
+  addBook = () => {
     const title = this.myTitle.value.trim();
     const author = this.myAuthor.value.trim();
 
@@ -42,13 +42,13 @@ class BookCollection {
     }
   }
 
-  removeBook(title) {
+  removeBook = (title) => {
     this.books = this.books.filter((book) => book.title !== title);
     this.saveBooks();
     this.renderBooks();
   }
 
-  renderBooks() {
+  renderBooks = () => {
     this.myList.innerHTML = '';
 
     if (this.books.length === 0) {
